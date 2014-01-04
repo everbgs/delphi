@@ -1,17 +1,1 @@
-*.bpl 
-*_TLB.pas 
-*.dcu 
-*.local 
-*.exe 
-*.dcp 
-*.identcache 
-*__history 
-*.drc 
-*.log 
-*.dfn 
-*\log 
-*\bin 
-*\database 
-*\lib 
-*.temp 
-*.bkp
+*.o *.lo *.la *.al .libs *.so *.so.[0-9]* *.a *.pyc *.pyo *.rej *~ #*# .#* .*.swp .DS_Store *.tlb *.bpl *_TLB.pas *.dcu *.local *.exe *.dcp *.identcache *.ini *.tvsconfig *.txaPackage *__history *.drc *jedi* *DevExpress* *.log *.dfn *\log *\bin *\database *\lib *.temp *.bkp *.db *.bak *.old *.cbk
