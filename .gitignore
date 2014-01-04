@@ -7,8 +7,6 @@
 *.identcache 
 *__history 
 *.drc 
-*jedi* 
-*DevExpress* 
 *.log 
 *.dfn 
 *\log 
