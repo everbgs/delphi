@@ -1,0 +1,12 @@
+Uma forma interessante de instalar componentes
+
+.Criar um diretorio padrão para o componente
+.Botão direito no .bpl (Pacote do componente delphi), options, configurar:
+	CDP     output directory: novo\lib
+	Package ||     ||       : novo\bin
+	unit    ||     ||       : novo\lib
+
+.Compilar e instalar
+
+.Em seguida vá para Tools/options/library-win32
+	Configurar o "library path" adicionando o caminho da lib do componente
