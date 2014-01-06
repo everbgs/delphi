@@ -2,13 +2,13 @@ program PopupCanvas;
 
 uses
   Forms,
-  Unit5 in 'Unit5.pas' {Form5};
+  uFrmPrincipal in 'uFrmPrincipal.pas' {FrmPrincipal};
 
 {$R *.res}
 
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
-  Application.CreateForm(TForm5, Form5);
+  Application.CreateForm(TFrmPrincipal, FrmPrincipal);
   Application.Run;
 end.
