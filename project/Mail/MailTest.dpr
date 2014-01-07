@@ -2,7 +2,7 @@ program MailTest;
 
 uses
   Forms,
-  uFrmTeste in 'uFrmTeste.pas' {Form1},
+  uFrmTeste in 'uFrmTeste.pas' {FrmTeste},
   BgsMail in 'BgsMail.pas';
 
 {$R *.res}
@@ -10,6 +10,6 @@ uses
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
-  Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TFrmTeste, FrmTeste);
   Application.Run;
 end.
