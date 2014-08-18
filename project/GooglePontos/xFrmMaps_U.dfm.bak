@@ -1,0 +1,51 @@
+object Form12: TForm12
+  Left = 0
+  Top = 0
+  Caption = 'Form12'
+  ClientHeight = 214
+  ClientWidth = 452
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poMainFormCenter
+  DesignSize = (
+    452
+    214)
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Button1: TButton
+    Left = 373
+    Top = 8
+    Width = 71
+    Height = 25
+    Anchors = [akTop, akRight]
+    Caption = 'Button1'
+    TabOrder = 0
+    OnClick = Button1Click
+  end
+  object Memo1: TMemo
+    Left = 8
+    Top = 4
+    Width = 359
+    Height = 202
+    Anchors = [akLeft, akTop, akRight, akBottom]
+    Lines.Strings = (
+      'Memo1')
+    ScrollBars = ssBoth
+    TabOrder = 1
+  end
+  object Button2: TButton
+    Left = 373
+    Top = 56
+    Width = 71
+    Height = 25
+    Anchors = [akTop, akRight]
+    Caption = 'Button1'
+    TabOrder = 2
+    OnClick = Button2Click
+  end
+end

@@ -1,0 +1,98 @@
+unit Unit12;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, IdBaseComponent, IdComponent, IdTCPConnection, IdTCPClient,
+  IdHTTP;
+
+type
+  TTeste = class
+  private
+    FTeste: string;
+    procedure SetTeste(const Value: string);
+  public
+    constructor Create;
+    property Teste: string write SetTeste;
+  end;
+
+  TxFrmMaps = class(TForm)
+    Button1: TButton;
+    Memo1: TMemo;
+    Button2: TButton;
+    procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+  private
+    { Private declarations }
+
+  public
+    { Publc declarations }
+  end;
+
+var
+  xFrmMaps: TxFrmMaps;
+
+implementation
+
+{$R *.dfm}
+
+
+
+procedure TxFrmMaps.Button1Click(Sender: TObject);
+var
+  oHttp: TIdHTTP;
+  s: string;
+begin
+  oHttp := TIdHTTP.Create(nil);
+  try
+    oHttp.ConnectTimeout := 3000;
+    oHttp.ReadTimeout := 10000;
+    with oHttp.ProxyParams.Create do
+    begin
+      ProxyServer := '192.168.1.250';
+      ProxyPort := 3128;
+      ProxyUsername := 'everton';
+      ProxyPassword := 'evert67@';
+      BasicAuthentication := True;
+    end;
+
+
+    s := oHttp.Get('http://maps.google.com/maps/api/directions/xml?origin=-23.6313,-46.4833&destination=-16.4714,-54.6725&mode=driving&waypoints=optimize:true|-28.9736107,-51.0800525|&sensor=false');
+    try
+      Memo1.Lines.Append(s);
+    except
+      Memo1.Lines.Add('Erro');
+      oHttp.Disconnect;
+    end;
+  finally
+    oHttp.Free;
+  end;
+end;
+
+procedure TxFrmMaps.Button2Click(Sender: TObject);
+begin
+  with TTeste.Create do
+  try
+    Teste := '20';
+
+
+
+  finally
+    Free;
+  end;
+end;
+
+{ TTeste }
+
+constructor TTeste.Create;
+begin
+  FTeste := 'Ja ta Criado';
+end;
+
+procedure TTeste.SetTeste(const Value: string);
+begin
+  ShowMessage(FTeste);
+end;
+
+end.
